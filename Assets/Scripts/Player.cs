@@ -26,7 +26,10 @@ public class Player : MonoBehaviour
     private void HandleMovement()
     {
         Vector2 inputVector = GameInput.Instance.GetMovementVector();
-        inputVector.Normalize();
+        
+        
+        inputVector = inputVector.normalized;
+        
         rb.MovePosition(rb.position + inputVector * (movingSpeed * Time.fixedDeltaTime));
         
         if (Math.Abs(inputVector.x) > minMovingSpeed || Math.Abs(inputVector.y) > minMovingSpeed)
@@ -37,10 +40,17 @@ public class Player : MonoBehaviour
         {
             isRunning = false;
         }
+        
     }
     
     public bool IsRunning()
     {
         return isRunning;
+    }
+    
+    public Vector3 GetPlayerScreenPosition()
+    {
+        Vector3 playerScreenPosition = Camera.main.WorldToScreenPoint(transform.position);
+        return playerScreenPosition;
     }
 } 

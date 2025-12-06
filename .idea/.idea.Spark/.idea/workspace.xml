@@ -5,160 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c472e3a-03ae-43c4-9dbd-16fc30b4fe87" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Spark/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Spark/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Spark/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Spark/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Spark/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Spark/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Stovben.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Stovben/Stovben.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Stovben/Stovben.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Stovben/StovbenRoaming.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Stovben/StovbenRoaming.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/AgentOverride2dEditor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/AgentOverride2dEditor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/CollectSources2dEditor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/CollectSources2dEditor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/CollectSourcesCache2dEditor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/CollectSourcesCache2dEditor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshAgentAttributePropertyDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshAgentAttributePropertyDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshAreaAttributePropertyDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshAreaAttributePropertyDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshAssetManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshAssetManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshComponentsEditor.asmdef" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshComponentsEditor.asmdef.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshComponentsGUIUtility.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshComponentsGUIUtility.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshLinkEditor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshLinkEditor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshModifierEditor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshModifierEditor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshModifierTilemapEditor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshModifierTilemapEditor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshModifierVolumeEditor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshModifierVolumeEditor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshSurfaceEditor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshSurfaceEditor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/RootSources2dEditor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/RootSources2dEditor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/AgentOverride2d.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/AgentOverride2d.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/AgentRotate2d.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/AgentRotate2d.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/AgentRotateSmooth2d.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/AgentRotateSmooth2d.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/CollectSources2d.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/CollectSources2d.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/CollectSourcesCache2d.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/CollectSourcesCache2d.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/CollectTilemapSourcesCache2d.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/CollectTilemapSourcesCache2d.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshAgentAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshAgentAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshAreaAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshAreaAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshBuilder2d.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshBuilder2d.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshBuilderState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshBuilderState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshComponents.asmdef" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshComponents.asmdef.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshExtension.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshExtension.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshExtensionsProvider.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshExtensionsProvider.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshLink.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshLink.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshModifier.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshModifier.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshModifierTilemap.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshModifierTilemap.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshModifierVolume.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshModifierVolume.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshSurface.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshSurface.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/RootSources2d.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/RootSources2d.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/RotateAgentInstantly.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/RotateAgentInstantly.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/RotateAgentSmoothly.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/RotateAgentSmoothly.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Bonfire-Extinguished .prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Bonfire-Extinguished .prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Sunflower.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Sunflower.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Tree.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Tree.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Stovben.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Stovben/Stovben.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Stovben/Stovben.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh-NavMeshSurface .asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh-NavMeshSurface .asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerVisual.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerVisual.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Stovben.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Stovben/EnemyAI.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environments.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environments/32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environments/32x32.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environments/decorative.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environments/decorative.psd.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environments/houses.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environments/houses.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environments/mainlevbuild.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environments/mainlevbuild.psd.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environments/zeo254-completed-commission.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environments/zeo254-completed-commission.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Misc.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Misc/Shadows_Sheet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Misc/Shadows_Sheet.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/idle.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/idle/frame_000.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/idle/frame_000.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/idle/frame_001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/idle/frame_001.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/idle/frame_002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/idle/frame_002.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/idle/frame_003.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/idle/frame_003.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/running.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/running/east.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/running/east/frame_000.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/running/east/frame_000.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/running/east/frame_001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/running/east/frame_001.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/running/east/frame_002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/running/east/frame_002.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/running/east/frame_003.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/running/east/frame_003.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Stovben.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Stovben/Stovben.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Stovben/Stovben.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Recovery.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Recovery/0 (1).unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Recovery/0 (1).unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Recovery/0 (2).unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Recovery/0 (2).unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Recovery/0 (3).unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Recovery/0 (3).unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Recovery/0.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Recovery/0.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stovben/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stovben/EnemyAI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Flashlight.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Flashlight/Flashlight.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Flashlight/Flashlight.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Flashlight/FlashlightOff.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Flashlight/FlashlightOff.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Flashlight/FlashlightOn.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Flashlight/FlashlightOn.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Stovben/StovbenDeath.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Stovben/StovbenDeath.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Flashlight.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Flashlight/Flashlight.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Flashlight/Flashlight.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/ActiveWeapon.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/ActiveWeapon.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Flashlight.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Flashlight.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/FlashlightVisual.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/FlashlightVisual.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Flashlight.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Flashlight/Flashlight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Flashlight/Flashlight.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Spark/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Spark/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stovben/Stovben.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Stovben/Stovben.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stovben/StovbenRoaming.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Stovben/StovbenRoaming.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerInputAction/PlayerInputActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerInputAction/PlayerInputActions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerInputAction/PlayerInputActions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerInputAction/PlayerInputActions.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Stovben/Stovben.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Stovben/Stovben.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,8 +46,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/User/Spark/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/ActiveWeapon.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/FlashlightVisual.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -264,7 +142,7 @@
       <workItem from="1762333320685" duration="703000" />
       <workItem from="1762430954981" duration="6212000" />
       <workItem from="1763805937483" duration="10175000" />
-      <workItem from="1765023968203" duration="1700000" />
+      <workItem from="1765023968203" duration="6627000" />
     </task>
     <task id="LOCAL-00001" summary="Add player animations and sprite rotation towards cursor">
       <option name="closed" value="true" />
@@ -282,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763827822192</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add rotation for Enemy and NavMash">
+      <option name="closed" value="true" />
+      <created>1765025721695</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1765025721695</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,7 +202,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Add player animations and sprite rotation towards cursor" />
     <MESSAGE value="Add enemy and AI for Enemy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add enemy and AI for Enemy" />
+    <MESSAGE value="Add rotation for Enemy and NavMash" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add rotation for Enemy and NavMash" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

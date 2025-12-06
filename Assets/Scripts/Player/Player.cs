@@ -5,8 +5,8 @@ public class Player : MonoBehaviour
 {
     public static Player Instance  { get; private set; }
     
-    [SerializeField] private float movingSpeed = 10f;    
-    
+    [SerializeField] private float movingSpeed = 10f;
+    private Vector2 inputVector;
     private Rigidbody2D rb;
     
     private float minMovingSpeed = 0.1f;
@@ -17,6 +17,22 @@ public class Player : MonoBehaviour
         Instance = this;
         rb = GetComponent<Rigidbody2D>();
     }
+
+    public void Start()
+    {
+        GameInput.Instance.OnPlayerAttack += GameInput_OnPlayerAttack;
+
+    }
+
+    private void GameInput_OnPlayerAttack(object sender, EventArgs e)
+    {
+        ActiveWeapon.Instance.GetActiveWeapon().Attack();
+    }
+    
+    private void Update()
+    {
+        inputVector  = GameInput.Instance.GetMovementVector();
+    }
     
     private void FixedUpdate()
     {
@@ -25,7 +41,6 @@ public class Player : MonoBehaviour
     
     private void HandleMovement()
     {
-        Vector2 inputVector = GameInput.Instance.GetMovementVector();
         rb.MovePosition(rb.position + inputVector * (movingSpeed * Time.fixedDeltaTime));
         
         if (Math.Abs(inputVector.x) > minMovingSpeed || Math.Abs(inputVector.y) > minMovingSpeed)

@@ -11,9 +11,20 @@ public class ActiveWeapon : MonoBehaviour
     {
         Instance = this;
     }
-
+    private void Update()
+    {
+        FollowMousePosition();
+    }
     public Flashlight GetActiveWeapon()
     {
         return flashlight;
+    }
+    
+    private void FollowMousePosition()
+    {
+        Vector3 mousePos = GameInput.Instance.GetMousePosition();
+        Vector3 playerPosition = Player.Instance.GetPlayerScreenPosition();
+
+        transform.rotation = Quaternion.Euler(0, mousePos.x < playerPosition.x ? 180 : 0, 0);
     }
 }

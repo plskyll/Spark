@@ -1,70 +1,106 @@
 using UnityEngine;
 using UnityEngine.AI;
-using Spark.Utils;
 
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] private State startingState;
-    [SerializeField] private float roamingDistanceMax = 7f;
-    [SerializeField] private float roamingDistanceMin = 3f;
-    [SerializeField] private float roamingTimerMax = 2f;
-
-
-    private NavMeshAgent navMeshAgent;
-    private State state;
-    private float roamingTime;
-    private Vector3 roamPosition;
-    private Vector3 startingPosition;
-
-
-    private enum State{
-        Roaming
-    }
+    [Header("Settings")]
+    [SerializeField] private float patrolSpeed = 2f;
+    [SerializeField] private float chaseSpeed = 5f;
     
+    [SerializeField] private float patrolRadius = 5f;
+    [SerializeField] private float waitTimeMin = 1f;
+    [SerializeField] private float waitTimeMax = 3f;
     
-    private void Awake(){
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        navMeshAgent.updateRotation = false;
-        navMeshAgent.updateUpAxis = false;
-        state = startingState;
-    }
+    [SerializeField] private float detectionRange = 8f;
+    [SerializeField] private float damagePerSecond = 10f;
 
+    private NavMeshAgent agent;
+    private Transform playerTransform;
+    private float waitTimer;
+    private bool isWaiting;
 
-    private void Update(){
-        switch(state){
-            default:
-            case State.Roaming:
-                roamingTime -= Time.deltaTime;
-                if(roamingTime <0){
-                    Roaming();
-                    roamingTime = roamingTimerMax;
-                }
-                break;
-        }
-    }
-
-
-    private void  Roaming(){
-        startingPosition = transform.position;
-        roamPosition = GetRoamingPosition();
-        ChangeFacingDirection(startingPosition, roamPosition);
-        navMeshAgent.SetDestination(roamPosition);
-    }
-
-
-    private Vector3 GetRoamingPosition(){
-        return startingPosition + Utils.GetRandomDir() * UnityEngine.Random.Range(roamingDistanceMin, roamingDistanceMax);
-    }
-    
-    private void ChangeFacingDirection(Vector3 sourcePosition, Vector3 targetPosition)
+    private void Awake()
     {
-        if (sourcePosition.x > targetPosition.x)
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+    }
+
+    private void Start()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
         {
-            transform.rotation = Quaternion.Euler(0, -180, 0);
+            playerTransform = player.transform;
+        }
+
+        SetRandomDestination();
+        agent.speed = patrolSpeed;
+    }
+
+    private void Update()
+    {
+        if (playerTransform == null) return;
+
+        float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
+
+        if (distanceToPlayer <= detectionRange)
+        {
+            ChasePlayer();
         }
         else
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            Patrol();
+        }
+    }
+
+    private void ChasePlayer()
+    {
+        isWaiting = false;
+        agent.speed = chaseSpeed;
+        agent.SetDestination(playerTransform.position);
+    }
+
+    private void Patrol()
+    {
+        agent.speed = patrolSpeed;
+
+        if (!agent.pathPending && agent.remainingDistance < 0.5f)
+        {
+            if (!isWaiting)
+            {
+                isWaiting = true;
+                waitTimer = Random.Range(waitTimeMin, waitTimeMax);
+            }
+            else
+            {
+                waitTimer -= Time.deltaTime;
+                if (waitTimer <= 0)
+                {
+                    isWaiting = false;
+                    SetRandomDestination();
+                }
+            }
+        }
+    }
+
+    private void SetRandomDestination()
+    {
+        Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
+        randomDirection += transform.position;
+        NavMeshHit hit;
+        
+        if (NavMesh.SamplePosition(randomDirection, out hit, patrolRadius, 1))
+        {
+            agent.SetDestination(hit.position);
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Damage Dealt"); 
         }
     }
 }

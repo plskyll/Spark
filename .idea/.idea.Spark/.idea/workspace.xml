@@ -5,37 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c472e3a-03ae-43c4-9dbd-16fc30b4fe87" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Flashlight.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Flashlight/Flashlight.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Flashlight/Flashlight.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Flashlight/FlashlightOff.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Flashlight/FlashlightOff.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Flashlight/FlashlightOn.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Flashlight/FlashlightOn.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Stovben/StovbenDeath.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Stovben/StovbenDeath.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Flashlight.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Flashlight/Flashlight.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Flashlight/Flashlight.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/ActiveWeapon.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/ActiveWeapon.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Flashlight.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Flashlight.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/FlashlightVisual.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/FlashlightVisual.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Flashlight.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Flashlight/Flashlight.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Flashlight/Flashlight.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Spark/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Spark/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stovben/Stovben.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Stovben/Stovben.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stovben/StovbenRoaming.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Stovben/StovbenRoaming.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerInputAction/PlayerInputActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerInputAction/PlayerInputActions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerInputAction/PlayerInputActions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerInputAction/PlayerInputActions.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Stovben/Stovben.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Stovben/Stovben.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Flashlight/Flashlight.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Flashlight/Flashlight.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Flashlight/FlashlightOff.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Flashlight/FlashlightOff.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Flashlight/FlashlightOn.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Flashlight/FlashlightOn.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stovben/StovbenDeath.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stovben/StovbenDeath.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Flashlight/Flashlight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Flashlight/Flashlight.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stovben/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stovben/EnemyAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/ActiveWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/ActiveWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Flashlight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Flashlight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/FlashlightVisual.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/FlashlightVisual.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +123,8 @@
       <workItem from="1762333320685" duration="703000" />
       <workItem from="1762430954981" duration="6212000" />
       <workItem from="1763805937483" duration="10175000" />
-      <workItem from="1765023968203" duration="6627000" />
+      <workItem from="1765023968203" duration="6652000" />
+      <workItem from="1765308045315" duration="2994000" />
     </task>
     <task id="LOCAL-00001" summary="Add player animations and sprite rotation towards cursor">
       <option name="closed" value="true" />
@@ -168,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765025721695</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add flashlight weapon">
+      <option name="closed" value="true" />
+      <created>1765056675513</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1765056675513</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,7 +193,8 @@
     <MESSAGE value="Add player animations and sprite rotation towards cursor" />
     <MESSAGE value="Add enemy and AI for Enemy" />
     <MESSAGE value="Add rotation for Enemy and NavMash" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add rotation for Enemy and NavMash" />
+    <MESSAGE value="Add flashlight weapon" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add flashlight weapon" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

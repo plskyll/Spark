@@ -20,4 +20,9 @@ public class FlashlightVisual : MonoBehaviour
     {
         animator.SetTrigger(ATTACK);
     }
+
+    public void TriggerEndAttackAnimation()
+    {
+        flashlight.AttackColliderTurnOff();
+    }
 }

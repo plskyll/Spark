@@ -12,12 +12,12 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float waitTimeMax = 3f;
     
     [SerializeField] private float detectionRange = 8f;
-    [SerializeField] private float damagePerSecond = 10f;
 
     private NavMeshAgent agent;
     private Transform playerTransform;
     private float waitTimer;
     private bool isWaiting;
+    private bool isDead = false; 
 
     private void Awake()
     {
@@ -33,13 +33,23 @@ public class EnemyAI : MonoBehaviour
         {
             playerTransform = player.transform;
         }
+        else
+        {
+            Debug.LogError("ERROR: EnemyAI could not find Player! Check if Player object has 'Player' tag.");
+        }
 
         SetRandomDestination();
         agent.speed = patrolSpeed;
+        
+        if (!agent.isOnNavMesh)
+        {
+            Debug.LogError("ERROR: Enemy is not on NavMesh! Ensure NavMesh is baked.");
+        }
     }
 
     private void Update()
     {
+        if (isDead) return; 
         if (playerTransform == null) return;
 
         float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
@@ -58,7 +68,10 @@ public class EnemyAI : MonoBehaviour
     {
         isWaiting = false;
         agent.speed = chaseSpeed;
-        agent.SetDestination(playerTransform.position);
+        if (agent.isOnNavMesh)
+        {
+            agent.SetDestination(playerTransform.position);
+        }
     }
 
     private void Patrol()
@@ -86,6 +99,8 @@ public class EnemyAI : MonoBehaviour
 
     private void SetRandomDestination()
     {
+        if (!agent.isOnNavMesh) return;
+
         Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
         randomDirection += transform.position;
         NavMeshHit hit;
@@ -96,11 +111,14 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    public void SetDeathState()
     {
-        if (collision.gameObject.CompareTag("Player"))
+        isDead = true;
+        if (agent.isOnNavMesh)
         {
-            Debug.Log("Damage Dealt"); 
+            agent.isStopped = true;
+            agent.velocity = Vector3.zero;
         }
+        enabled = false; 
     }
 }

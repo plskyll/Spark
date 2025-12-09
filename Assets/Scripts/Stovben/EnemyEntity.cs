@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof(PolygonCollider2D))]
+[RequireComponent(typeof(CapsuleCollider2D))]
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(EnemyAI))]
 public class EnemyEntity : MonoBehaviour
@@ -14,27 +14,48 @@ public class EnemyEntity : MonoBehaviour
     
     private int currentHealth;
 
-    private PolygonCollider2D polygonCollider2D;
+    private CapsuleCollider2D capsuleCollider2D;
     private BoxCollider2D boxCollider2D;
     private EnemyAI enemyAI;
 
     private void Awake()
     {
-        polygonCollider2D = GetComponent<PolygonCollider2D>();
+        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
         enemyAI = GetComponent<EnemyAI>();
     }
 
     private void Start()
     {
-        currentHealth = enemySO.enemyHealth;
+        if (enemySO == null)
+        {
+            Debug.LogError($"[EnemyEntity] Enemy SO not assigned on {gameObject.name}");
+            currentHealth = 100;
+        }
+        else
+        {
+            currentHealth = enemySO.enemyHealth;
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        TryDamagePlayer(collision.gameObject);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.transform.TryGetComponent(out Player player))
+        TryDamagePlayer(collision.gameObject);
+    }
+
+    private void TryDamagePlayer(GameObject target)
+    {
+        if (target.TryGetComponent(out Player player))
         {
-            player.TakeDamage(transform, enemySO.enemyDamageAmount);
+            if (enemySO != null)
+            {
+                player.TakeDamage(transform, enemySO.enemyDamageAmount);
+            }
         }
     }
 
@@ -45,14 +66,14 @@ public class EnemyEntity : MonoBehaviour
         DetectDeath();
     }
 
-    public void PolygonColliderTurnOff()
+    public void CapsuleColliderTurnOff()
     {
-        polygonCollider2D.enabled = false;
+        capsuleCollider2D.enabled = false;
     }
 
-    public void PolygonColliderTurnOn()
+    public void CapsuleColliderTurnOn()
     {
-        polygonCollider2D.enabled = true;
+        capsuleCollider2D.enabled = true;
     }
 
     private void DetectDeath()
@@ -60,13 +81,17 @@ public class EnemyEntity : MonoBehaviour
         if (currentHealth <= 0)
         {
             boxCollider2D.enabled = false;
-            polygonCollider2D.enabled = false;
-            enemyAI.SetDeathState();
+            capsuleCollider2D.enabled = false;
+            
+            if (enemyAI != null) enemyAI.SetDeathState();
+
             OnDeath?.Invoke(this, EventArgs.Empty);
+            
             if (dissolveEffectPrefab != null)
             {
                 Instantiate(dissolveEffectPrefab, transform.position, Quaternion.identity);
             }
+
             Destroy(gameObject); 
         }
     }

@@ -6,24 +6,24 @@ public class EnemyAI : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float patrolSpeed = 2f;
     [SerializeField] private float chaseSpeed = 5f;
-    
     [SerializeField] private float patrolRadius = 5f;
     [SerializeField] private float waitTimeMin = 1f;
     [SerializeField] private float waitTimeMax = 3f;
-    
     [SerializeField] private float detectionRange = 8f;
 
     private NavMeshAgent agent;
     private Transform playerTransform;
     private float waitTimer;
     private bool isWaiting;
-    private bool isDead = false; 
+    private bool isDead = false;
+    private Vector3 defaultScale;
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        defaultScale = transform.localScale;
     }
 
     private void Start()
@@ -33,24 +33,30 @@ public class EnemyAI : MonoBehaviour
         {
             playerTransform = player.transform;
         }
-        else
-        {
-            Debug.LogError("ERROR: EnemyAI could not find Player! Check if Player object has 'Player' tag.");
-        }
 
         SetRandomDestination();
         agent.speed = patrolSpeed;
-        
-        if (!agent.isOnNavMesh)
-        {
-            Debug.LogError("ERROR: Enemy is not on NavMesh! Ensure NavMesh is baked.");
-        }
     }
 
     private void Update()
     {
-        if (isDead) return; 
+        if (isDead) return;
         if (playerTransform == null) return;
+
+        Vector3 direction = agent.velocity;
+        if (direction.magnitude < 0.1f)
+        {
+            direction = agent.desiredVelocity;
+        }
+
+        if (direction.x > 0.01f)
+        {
+            transform.localScale = new Vector3(Mathf.Abs(defaultScale.x), defaultScale.y, defaultScale.z);
+        }
+        else if (direction.x < -0.01f)
+        {
+            transform.localScale = new Vector3(-Mathf.Abs(defaultScale.x), defaultScale.y, defaultScale.z);
+        }
 
         float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
 
@@ -104,7 +110,7 @@ public class EnemyAI : MonoBehaviour
         Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
         randomDirection += transform.position;
         NavMeshHit hit;
-        
+
         if (NavMesh.SamplePosition(randomDirection, out hit, patrolRadius, 1))
         {
             agent.SetDestination(hit.position);
@@ -119,6 +125,6 @@ public class EnemyAI : MonoBehaviour
             agent.isStopped = true;
             agent.velocity = Vector3.zero;
         }
-        enabled = false; 
+        enabled = false;
     }
 }

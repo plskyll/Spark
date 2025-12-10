@@ -14,6 +14,8 @@ public class EnemyEntity : MonoBehaviour
     public event EventHandler OnDeath;
     
     private int currentHealth;
+    private float damageCooldown = 1.0f;
+    private float lastDamageTime;
 
     private CapsuleCollider2D capsuleCollider2D;
     private BoxCollider2D boxCollider2D;
@@ -68,9 +70,13 @@ public class EnemyEntity : MonoBehaviour
     {
         if (target.TryGetComponent(out Player player))
         {
-            if (enemySO != null)
+            if (Time.time - lastDamageTime >= damageCooldown)
             {
-                player.TakeDamage(transform, enemySO.enemyDamageAmount);
+                if (enemySO != null)
+                {
+                    player.TakeDamage(transform, enemySO.enemyDamageAmount);
+                    lastDamageTime = Time.time;
+                }
             }
         }
     }

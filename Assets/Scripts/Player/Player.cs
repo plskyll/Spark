@@ -8,19 +8,23 @@ public class Player : MonoBehaviour
     [SerializeField] private float movingSpeed = 10f;
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private GameObject deathEffectPrefab;
-
+    
+    public event EventHandler OnFlashBlink;
+    
     private Vector2 inputVector;
     private Rigidbody2D rb;
+    private KnockBack knockBack;
+    
     private int currentHealth;
-
     private float minMovingSpeed = 0.1f;
     private bool isRunning = false;
     private bool isDead = false;
-
+    
     private void Awake()
     {
         Instance = this;
         rb = GetComponent<Rigidbody2D>();
+        knockBack = GetComponent<KnockBack>();
         currentHealth = maxHealth;
     }
 
@@ -49,6 +53,12 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         if (isDead) return;
+
+        if (knockBack.IsGettingKnockedBack)
+        {
+            return;
+        }
+
         HandleMovement();
     }
 
@@ -80,7 +90,9 @@ public class Player : MonoBehaviour
     public void TakeDamage(Transform attacker, int damageAmount)
     {
         if (isDead) return;
-
+        
+        knockBack.GetKnockedBack(attacker);
+        OnFlashBlink?.Invoke(this, EventArgs.Empty);
         currentHealth -= damageAmount;
         Debug.Log($"HP: {currentHealth}");
         

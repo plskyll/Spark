@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7c472e3a-03ae-43c4-9dbd-16fc30b4fe87" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Spark/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Spark/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Stovben/Stovben.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Stovben/Stovben.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh-NavMeshSurface .asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh-NavMeshSurface .asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stovben/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stovben/EnemyAI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stovben/EnemyEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stovben/EnemyEntity.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,7 +116,7 @@
       <workItem from="1762430954981" duration="6212000" />
       <workItem from="1763805937483" duration="10175000" />
       <workItem from="1765023968203" duration="6652000" />
-      <workItem from="1765308045315" duration="6728000" />
+      <workItem from="1765308045315" duration="8661000" />
     </task>
     <task id="LOCAL-00001" summary="Add player animations and sprite rotation towards cursor">
       <option name="closed" value="true" />

@@ -1513,6 +1513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   movingSpeed: 10
   maxHealth: 100
+  deathEffectPrefab: {fileID: 0}
 --- !u!95 &2130012709
 Animator:
   serializedVersion: 7
@@ -1681,6 +1682,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flashlight
       objectReference: {fileID: 0}
+    - target: {fileID: 8440231529445262673, guid: 2cc9222eda40e6f4aacda619f54891f2, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1694,17 +1699,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1353095320478693662, guid: 3da790d2b6b32ac4bb6ad41f7a734b60, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2902969964891728985, guid: 3da790d2b6b32ac4bb6ad41f7a734b60, type: 3}
       propertyPath: m_Name
       value: Stovben
       objectReference: {fileID: 0}
     - target: {fileID: 7179860581386499923, guid: 3da790d2b6b32ac4bb6ad41f7a734b60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.94
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7179860581386499923, guid: 3da790d2b6b32ac4bb6ad41f7a734b60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7179860581386499923, guid: 3da790d2b6b32ac4bb6ad41f7a734b60, type: 3}
       propertyPath: m_LocalPosition.z

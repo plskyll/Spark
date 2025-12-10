@@ -1,3 +1,4 @@
+using System.Collections;
 using System;
 using UnityEngine;
 
@@ -92,7 +93,13 @@ public class EnemyEntity : MonoBehaviour
                 Instantiate(dissolveEffectPrefab, transform.position, Quaternion.identity);
             }
 
-            Destroy(gameObject); 
+            StartCoroutine(DestroyAfterDelay(1.5f));
         }
+    }
+
+    private IEnumerator DestroyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
     }
 }

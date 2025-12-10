@@ -490,17 +490,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 50, y: 50}
   m_EdgeRadius: 0
---- !u!114 &291373595 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2405494984795916571, guid: 3da790d2b6b32ac4bb6ad41f7a734b60, type: 3}
-  m_PrefabInstance: {fileID: 6591815627311639364}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd81a60a7e0a1be4fbb0c3705f8ca3e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
 --- !u!4 &328755614 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3527391369228478374, guid: 2cc9222eda40e6f4aacda619f54891f2, type: 3}
@@ -1096,6 +1085,7 @@ GameObject:
   - component: {fileID: 1119300317}
   - component: {fileID: 1119300318}
   - component: {fileID: 1119300319}
+  - component: {fileID: 1119300320}
   m_Layer: 0
   m_Name: PlayerVisual
   m_TagString: Untagged
@@ -1211,6 +1201,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec42cda5c55f014ca248aa23552e926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerVisual
+--- !u!114 &1119300320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119300315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c45f01d426f374b96ec6334a2d53b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlashBlink
+  blinkMaterial: {fileID: 2100000, guid: 0dbac4f1e35915541bf100eb6002483c, type: 2}
+  blinkDuration: 0.2
+  enemyTarget: {fileID: 0}
+  playerTarget: {fileID: 0}
 --- !u!4 &1124814512 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8327385069544660098, guid: 682d9c0db56b6b8459d335445aaa1d59, type: 3}
@@ -1679,9 +1685,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88c45f01d426f374b96ec6334a2d53b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlashBlink
-  damagableObject: {fileID: 291373595}
   blinkMaterial: {fileID: 2100000, guid: 0dbac4f1e35915541bf100eb6002483c, type: 2}
   blinkDuration: 0.2
+  enemyTarget: {fileID: 0}
+  playerTarget: {fileID: 0}
 --- !u!1 &2130012704
 GameObject:
   m_ObjectHideFlags: 0

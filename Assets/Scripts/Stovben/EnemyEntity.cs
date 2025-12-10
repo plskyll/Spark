@@ -107,6 +107,11 @@ public class EnemyEntity : MonoBehaviour
             
             if (enemyAI != null) enemyAI.SetDeathState();
 
+            foreach (var sr in spriteRenderers)
+            {
+                sr.color = Color.white;
+            }
+
             OnDeath?.Invoke(this, EventArgs.Empty);
             
             StartCoroutine(DissolveRoutine());

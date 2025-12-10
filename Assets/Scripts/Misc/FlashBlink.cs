@@ -1,73 +1,93 @@
 using UnityEngine;
+using System.Collections;
 
 public class FlashBlink : MonoBehaviour
 {
-    [SerializeField] private MonoBehaviour damagableObject;
     [SerializeField] private Material blinkMaterial;
     [SerializeField] private float blinkDuration = 0.2f;
 
-    private float blinkTimer;
-    private Material defaultMaterial;
-    private SpriteRenderer spriteRenderer;
-    private bool isBlinking;
+    [SerializeField] private EnemyEntity enemyTarget;
+    [SerializeField] private Player playerTarget;
+
+    private SpriteRenderer[] spriteRenderers;
+    private Material[] defaultMaterials;
+    private Coroutine blinkCoroutine;
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        defaultMaterial = spriteRenderer.material;
+        spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        if (spriteRenderers.Length == 0)
+        {
+            var parent = GetComponentInParent<Transform>();
+            if (parent != null)
+            {
+                spriteRenderers = parent.GetComponentsInChildren<SpriteRenderer>();
+            }
+        }
+
+        defaultMaterials = new Material[spriteRenderers.Length];
+        for (int i = 0; i < spriteRenderers.Length; i++)
+        {
+            defaultMaterials[i] = spriteRenderers[i].material;
+        }
     }
 
     private void Start()
     {
-        if (damagableObject is Player player)
+        if (enemyTarget == null && playerTarget == null)
         {
-            player.OnFlashBlink += DamagableObject_OnFlashBlink;
-        }
-        else if (damagableObject is EnemyEntity enemy)
-        {
-            enemy.OnTakeHit += DamagableObject_OnFlashBlink;
-        }
-    }
-
-    private void DamagableObject_OnFlashBlink(object sender, System.EventArgs e)
-    {
-        SetBlinkingMaterial();
-    }
-
-    private void Update()
-    {
-        if (isBlinking)
-        {
-            blinkTimer -= Time.deltaTime;
-            if (blinkTimer < 0)
+            enemyTarget = GetComponentInParent<EnemyEntity>();
+            if (enemyTarget == null)
             {
-                SetDefaultMaterial();
+                playerTarget = GetComponentInParent<Player>();
+            }
+        }
+
+        if (enemyTarget != null)
+        {
+            enemyTarget.OnTakeHit += (sender, args) => Flash();
+        }
+        else if (playerTarget != null)
+        {
+            playerTarget.OnFlashBlink += (sender, args) => Flash();
+        }
+    }
+
+    public void Flash()
+    {
+        if (blinkCoroutine != null) StopCoroutine(blinkCoroutine);
+        blinkCoroutine = StartCoroutine(FlashRoutine());
+    }
+
+    private IEnumerator FlashRoutine()
+    {
+        if (blinkMaterial == null) yield break;
+
+        foreach (var sr in spriteRenderers)
+        {
+            if (sr != null) sr.material = blinkMaterial;
+        }
+
+        yield return new WaitForSeconds(blinkDuration);
+
+        for (int i = 0; i < spriteRenderers.Length; i++)
+        {
+            if (spriteRenderers[i] != null)
+            {
+                spriteRenderers[i].material = defaultMaterials[i];
             }
         }
     }
 
-    private void SetBlinkingMaterial()
-    {
-        blinkTimer = blinkDuration;
-        spriteRenderer.material = blinkMaterial;
-        isBlinking = true;
-    }
-
-    private void SetDefaultMaterial()
-    {
-        spriteRenderer.material = defaultMaterial;
-        isBlinking = false;
-    }
-
     private void OnDestroy()
     {
-        if (damagableObject is Player player)
+        if (enemyTarget != null)
         {
-            player.OnFlashBlink -= DamagableObject_OnFlashBlink;
+            enemyTarget.OnTakeHit -= (sender, args) => Flash();
         }
-        else if (damagableObject is EnemyEntity enemy)
+        else if (playerTarget != null)
         {
-            enemy.OnTakeHit -= DamagableObject_OnFlashBlink;
+            playerTarget.OnFlashBlink -= (sender, args) => Flash();
         }
     }
 }

@@ -1,12 +1,13 @@
-Shader "Custom/Sprite Dissolve"
+Shader "Custom/Sprite Dissolve Object"
 {
     Properties
     {
-        _MainTex ("Sprite Texture", 2D) = "white" {}
+        [PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
         _Color ("Tint", Color) = (1,1,1,1)
         _DissolveAmount ("Dissolve Amount", Range(0, 1)) = 0
         _DissolveTexture ("Dissolve Texture", 2D) = "white" {}
-        _DissolveColor ("Dissolve Color", Color) = (1,1,1,1)
+        _NoiseScale ("Noise Scale", Float) = 1
+        _DissolveColor ("Dissolve Color", Color) = (1,0.2,0,1)
         _DissolveEmission ("Dissolve Emission", Float) = 2
     }
 
@@ -42,24 +43,26 @@ Shader "Custom/Sprite Dissolve"
 
             struct v2f
             {
-                float2 uv : TEXCOORD0;
                 float4 vertex : SV_POSITION;
+                float2 uv : TEXCOORD0;
+                float2 objPos : TEXCOORD1;
                 fixed4 color : COLOR;
             };
 
             sampler2D _MainTex;
             sampler2D _DissolveTexture;
-            float4 _MainTex_ST;
             fixed4 _Color;
             fixed4 _DissolveColor;
             float _DissolveAmount;
             float _DissolveEmission;
+            float _NoiseScale;
 
             v2f vert (appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                o.uv = v.uv;
+                o.objPos = v.vertex.xy + 0.5;
                 o.color = v.color * _Color;
                 return o;
             }
@@ -67,24 +70,19 @@ Shader "Custom/Sprite Dissolve"
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv) * i.color;
-                fixed dissolve = tex2D(_DissolveTexture, i.uv).r;
                 
-                // Створюємо ефект розчинення
-                float cutoff = _DissolveAmount;
-                float edge = 0.1;
+                if (col.a < 0.01) discard;
+
+                fixed noise = tex2D(_DissolveTexture, i.objPos * _NoiseScale).r;
                 
-                // Якщо пікселі нижче порогу - робимо прозорими
-                if (dissolve < cutoff)
-                {
-                    discard;
-                }
+                float cut = (_DissolveAmount * 1.4) - 0.2;
                 
-                // Додаємо світіння по краях розчинення
-                if (dissolve < cutoff + edge)
-                {
-                    float edgeFactor = (dissolve - cutoff) / edge;
-                    col.rgb = lerp(_DissolveColor.rgb * _DissolveEmission, col.rgb, edgeFactor);
-                }
+                float alphaMult = smoothstep(cut, cut + 0.15, noise);
+                
+                col.a *= alphaMult;
+                
+                float edgeGlow = (1 - alphaMult) * alphaMult * 4.0;
+                col.rgb += _DissolveColor.rgb * _DissolveEmission * edgeGlow;
                 
                 return col;
             }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5885870213296883382}
   - component: {fileID: 2433963898582559150}
   - component: {fileID: 2679699179342946787}
+  - component: {fileID: 2795690985655917740}
   m_Layer: 0
   m_Name: StovbenVisual
   m_TagString: Untagged
@@ -113,6 +114,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2795690985655917740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302759520546922213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c45f01d426f374b96ec6334a2d53b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlashBlink
+  damagableObject: {fileID: 2405494984795916571}
+  blinkMaterial: {fileID: 2100000, guid: 0dbac4f1e35915541bf100eb6002483c, type: 2}
+  blinkDuration: 0.2
 --- !u!1 &2902969964891728985
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +162,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.94, y: 1.75, z: 0}
-  m_LocalScale: {x: 9, y: 9, z: 0.75}
+  m_LocalScale: {x: 10.69, y: 10.69, z: 0.8908333}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5885870213296883382}
@@ -296,12 +312,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd81a60a7e0a1be4fbb0c3705f8ca3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
-  patrolSpeed: 2
-  chaseSpeed: 5
-  patrolRadius: 5
+  patrolSpeed: 3
+  chaseSpeed: 7
+  patrolRadius: 10
   waitTimeMin: 1
-  waitTimeMax: 3
-  detectionRange: 8
+  waitTimeMax: 2
+  detectionRange: 12
 --- !u!114 &3054941368417501943
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -34,8 +34,8 @@ public class EnemyAI : MonoBehaviour
             playerTransform = player.transform;
         }
 
-        SetRandomDestination();
         agent.speed = patrolSpeed;
+        SetRandomDestination();
     }
 
     private void Update()
@@ -105,13 +105,24 @@ public class EnemyAI : MonoBehaviour
 
     private void SetRandomDestination()
     {
-        if (!agent.isOnNavMesh) return;
+        if (!agent.isOnNavMesh)
+        {
+             NavMeshHit hitClose;
+             if (NavMesh.SamplePosition(transform.position, out hitClose, 1.0f, NavMesh.AllAreas))
+             {
+                 agent.Warp(hitClose.position);
+             }
+             else
+             {
+                 return;
+             }
+        }
 
-        Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
-        randomDirection += transform.position;
+        Vector2 randomPoint2D = Random.insideUnitCircle * patrolRadius;
+        Vector3 randomDirection = transform.position + new Vector3(randomPoint2D.x, randomPoint2D.y, 0);
+        
         NavMeshHit hit;
-
-        if (NavMesh.SamplePosition(randomDirection, out hit, patrolRadius, 1))
+        if (NavMesh.SamplePosition(randomDirection, out hit, 2f, NavMesh.AllAreas))
         {
             agent.SetDestination(hit.position);
         }

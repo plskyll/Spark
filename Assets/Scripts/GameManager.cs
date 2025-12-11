@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro; 
 using UnityEngine.SceneManagement; 
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class GameManager : MonoBehaviour
 
     private int totalFragments;
     private int collectedFragments;
+
+    private int totalEnemies;
+    private int deadEnemies;
 
     private void Awake()
     {
@@ -26,6 +30,15 @@ public class GameManager : MonoBehaviour
     {
         totalFragments = FindObjectsOfType<PickFragment>().Length;
         collectedFragments = 0;
+
+        EnemyEntity[] enemies = FindObjectsOfType<EnemyEntity>();
+        totalEnemies = enemies.Length;
+        deadEnemies = 0;
+
+        foreach (EnemyEntity enemy in enemies)
+        {
+            enemy.OnDeath += OnEnemyKilled;
+        }
         
         UpdateScoreText();
         
@@ -37,9 +50,18 @@ public class GameManager : MonoBehaviour
     {
         collectedFragments++;
         UpdateScoreText();
+        CheckWinCondition();
+    }
 
-        // Перевірка умови перемоги
-        if (collectedFragments >= totalFragments)
+    private void OnEnemyKilled(object sender, EventArgs e)
+    {
+        deadEnemies++;
+        CheckWinCondition();
+    }
+
+    private void CheckWinCondition()
+    {
+        if (collectedFragments >= totalFragments || deadEnemies >= totalEnemies)
         {
             WinGame();
         }
@@ -53,15 +75,24 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.Log($"Зібрано: {collectedFragments} / {totalFragments}");
+            Debug.Log($"Зібрано: {collectedFragments} / {totalFragments}, Вбито: {deadEnemies} / {totalEnemies}");
         }
     }
 
     private void WinGame()
     {
         Debug.Log("ВІТАЮ! ВИ ПЕРЕМОГЛИ!");
-        
+        Time.timeScale = 0f;
         if (winScreen != null)
             winScreen.SetActive(true); 
+    }
+    
+    private void OnDestroy()
+    {
+        EnemyEntity[] enemies = FindObjectsOfType<EnemyEntity>();
+        foreach (EnemyEntity enemy in enemies)
+        {
+            if(enemy != null) enemy.OnDeath -= OnEnemyKilled;
+        }
     }
 }

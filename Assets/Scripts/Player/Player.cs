@@ -7,9 +7,15 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float movingSpeed = 10f;
     [SerializeField] private int maxHealth = 100;
+    [SerializeField] private float regenRate = 0.1f;
+    [SerializeField] private int healthPerRegen = 1;
+    [SerializeField] private float regenDelay = 3f;
     [SerializeField] private GameObject deathEffectPrefab;
     
     public event EventHandler OnFlashBlink;
+    public event EventHandler<float> OnHealthChanged;
+    
+    public DeathMenu deathMenu;
     
     private Vector2 inputVector;
     private Rigidbody2D rb;
@@ -20,12 +26,16 @@ public class Player : MonoBehaviour
     private bool isRunning = false;
     private bool isDead = false;
     
+    private float regenTimer;
+    private float timeSinceLastDamage;
+    
     private void Awake()
     {
         Instance = this;
         rb = GetComponent<Rigidbody2D>();
         knockBack = GetComponent<KnockBack>();
         currentHealth = maxHealth;
+        timeSinceLastDamage = regenDelay;
     }
 
     public void Start()
@@ -48,6 +58,38 @@ public class Player : MonoBehaviour
     {
         if (isDead) return;
         inputVector = GameInput.Instance.GetMovementVector();
+        
+        timeSinceLastDamage += Time.deltaTime;
+        HandleRegeneration();
+    }
+
+    private void HandleRegeneration()
+    {
+        if (timeSinceLastDamage < regenDelay)
+        {
+            return;
+        }
+
+        if (currentHealth < maxHealth)
+        {
+            regenTimer += Time.deltaTime;
+            if (regenTimer >= regenRate)
+            {
+                currentHealth += healthPerRegen;
+                regenTimer = 0f;
+
+                if (currentHealth > maxHealth)
+                {
+                    currentHealth = maxHealth;
+                }
+
+                if (OnHealthChanged != null)
+                {
+                    float healthPercent = (float)currentHealth / maxHealth;
+                    OnHealthChanged.Invoke(this, healthPercent);
+                }
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -91,10 +133,18 @@ public class Player : MonoBehaviour
     {
         if (isDead) return;
         
+        timeSinceLastDamage = 0f;
+        
         knockBack.GetKnockedBack(attacker);
         OnFlashBlink?.Invoke(this, EventArgs.Empty);
         currentHealth -= damageAmount;
         Debug.Log($"HP: {currentHealth}");
+        
+        if (OnHealthChanged != null)
+        {
+            float healthPercent = (float)currentHealth / maxHealth;
+            OnHealthChanged.Invoke(this, healthPercent);
+        }
         
         if (currentHealth <= 0)
         {
@@ -118,5 +168,6 @@ public class Player : MonoBehaviour
         
         rb.linearVelocity = Vector2.zero;
         rb.simulated = false;
+        deathMenu.PlayerDied();
     }
 }

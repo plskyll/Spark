@@ -1,0 +1,33 @@
+[33mcommit 88a6130a22ed6d54b6fb39002b8f84a7ffcd7748[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: plskyll <yuliia.v.plysiuk@ukd.edu.ua>
+Date:   Wed Dec 10 17:42:46 2025 +0200
+
+    Create sample scena
+
+ .../shelved.patch                                  |  73 [32m+++++[m
+ ...before_Update_at_10_12_2025_16_39__Changes_.xml |   4 [32m+[m
+ .idea/.idea.Spark/.idea/workspace.xml              |  74 [32m+++[m[31m--[m
+ Assets/Prefabs/Environment/DeadTree.prefab         |   4 [32m+[m[31m-[m
+ Assets/Prefabs/Environment/FlowerPink.prefab       | 147 [32m++++++++++[m
+ Assets/Prefabs/Environment/FlowerPink.prefab.meta  |   7 [32m+[m
+ Assets/Prefabs/Environment/FlowerPurple.prefab     | 109 [32m+++++++[m
+ .../Prefabs/Environment/FlowerPurple.prefab.meta   |   7 [32m+[m
+ Assets/Prefabs/Environment/Houses.meta             |   8 [32m+[m
+ Assets/Prefabs/Environment/Houses/House1.prefab    | 270 [32m+++++++++++++++++[m
+ .../Prefabs/Environment/Houses/House1.prefab.meta  |   7 [32m+[m
+ Assets/Prefabs/Environment/Leaves 2.prefab         | 109 [32m+++++++[m
+ Assets/Prefabs/Environment/Leaves 2.prefab.meta    |   7 [32m+[m
+ Assets/Prefabs/Environment/Leaves.prefab           | 109 [32m+++++++[m
+ Assets/Prefabs/Environment/Leaves.prefab.meta      |   7 [32m+[m
+ Assets/Prefabs/Environment/Stone.prefab            | 147 [32m++++++++++[m
+ Assets/Prefabs/Environment/Stone.prefab.meta       |   7 [32m+[m
+ Assets/Prefabs/Environment/Stonesmall.prefab       | 147 [32m++++++++++[m
+ Assets/Prefabs/Environment/Stonesmall.prefab.meta  |   7 [32m+[m
+ Assets/Prefabs/Environment/Stump.prefab            | 147 [32m++++++++++[m
+ Assets/Prefabs/Environment/Stump.prefab.meta       |   7 [32m+[m
+ Assets/Prefabs/Environment/Sunflower.prefab        |   4 [32m+[m[31m-[m
+ Assets/Prefabs/Stovben/Stovben.prefab              |  28 [32m+[m[31m-[m
+ Assets/Scenes/SampleScene.unity                    | 322 [32m+++++[m[31m----------------[m
+ .../SampleScene/NavMesh-NavMeshSurface  1.asset    | Bin [31m12092[m -> [32m17976[m bytes
+ Assets/Sprites/Environments/32x32.png.meta         |  90 [32m+++[m[31m---[m
+ 26 files changed, 1522 insertions(+), 326 deletions(-)
